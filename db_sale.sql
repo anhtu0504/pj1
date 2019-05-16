@@ -104,9 +104,7 @@ CREATE TABLE `bill_detail` (
 -- (12, 11, 61, 1, 120000, '2017-03-21 07:16:09', '2017-03-21 07:16:09'),
 -- (11, 11, 57, 2, 150000, '2017-03-21 07:16:09', '2017-03-21 07:16:09');
 
--- --------------------------------------------------------
-
-                                                                                                                                         
+-- ------------------------------------------------------               
 
 
 CREATE TABLE `advisor`(
@@ -166,7 +164,7 @@ CREATE TABLE `category` (
 CREATE TABLE `products` (
   `id_product` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `producer` int(10) NOT NULL,
+  `producer` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `id_category` int(10) NOT NULL,
   `cpu` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `gen_cpu` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
