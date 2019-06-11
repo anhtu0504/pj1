@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Slide extends Model
 {
     //
-    protected $table = "products";
+    protected $table = "slide";
 }
