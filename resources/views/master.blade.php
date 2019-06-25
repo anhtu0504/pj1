@@ -15,6 +15,7 @@
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="source/assets/dest/css/animate.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+
 </head>
 <body>
 
@@ -42,16 +43,40 @@
 	<script src="source/assets/dest/js/wow.min.js"></script>
 	<!--customjs-->
 	<script src="source/assets/dest/js/custom2.js"></script>
-	<script>
+	<script type="text/javascript">
 	$(document).ready(function($) {    
 		$(window).scroll(function(){
 			if($(this).scrollTop()>150){
 			$(".header-bottom").addClass('fixNav')
 			}else{
-				$(".header-bottom").removeClass('fixNav')
-			}}
-		)
-	})
+				$(".header-bottom").rem
+				oveClass('fixNav')
+			}});
+
+		$(document).on('click', '.pagination a',function(event)
+        {	
+        	
+            event.preventDefault();
+            var page=$(this).attr('href').split('page=')[1];
+            getData(page);
+        });
+  		
+        function getData(page){
+        $.ajax(
+        {
+            url: '/index/ajax?page=' + page,
+            type: "get",
+            datatype: "html"
+        }).done(function(data){
+            $("#content").empty().html(data);
+            location.hash = page;
+            ;
+        }).fail(function(jqXHR, ajaxOptions, thrownError){
+              alert('No response from server');
+        });
+    }
+		
+    });
 	</script>
 </body>
 </html>

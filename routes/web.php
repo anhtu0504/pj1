@@ -20,6 +20,11 @@ Route::get('index',[
 	'uses'=>'PageController@getIndex'
 ]);
 
+Route::get('index/ajax',[
+	'as'=>'demo-ajax',
+	'uses'=>'PageController@getIndex'
+]);
+
 Route::get('loai-san-pham/{type}',[
 	'as'=>'loaisanpham',
 	'uses'=>'PageController@getLoaiSp'
@@ -49,5 +54,41 @@ Route::get('/saleproduct/{id}',[
 	'as'=>'saleProduct',
 	'uses'=>'PageController@getSaleProduct'
 ]);
+
+Route::get('add-to-cart/{id}',[
+	'as'=>'themgiohang',
+	'uses'=>'PageController@getAddtoCart'
+]);
+
+Route::get('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@getLogin'
+]);
+
+Route::post('dang-nhap',[
+	'as'=>'login',
+	'uses'=>'PageController@postLogin'
+]);
+
+Route::get('dang-ky',[
+	'as'=>'signup',
+	'uses'=>'PageController@getSignup'
+]);
+
+Route::post('dang-ky',[
+	'as'=>'signup',
+	'uses'=>'PageController@postSignup'
+]);
+
+Route::get('dang-xuat',[
+	'as'=>'logout',
+	'uses'=>'PageController@getLogout'
+]);
+
+Route::get('search',[
+	'as'=>'search',
+	'uses'=>'PageController@getSearch'
+]);
+
 
 
